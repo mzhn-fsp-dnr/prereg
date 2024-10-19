@@ -1,0 +1,1 @@
+from app.models.prereg_model import Prereg
