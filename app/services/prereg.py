@@ -7,6 +7,13 @@ from datetime import datetime, timedelta
 def get_prereg(db_session: Session, id: str):
         return db_session.query(prereg_model.Prereg).filter(prereg_model.Prereg.id == id).first()
 
+def validate_code(db_session: Session, code: int):
+        db_item = db_session.query(prereg_model.Prereg).filter(prereg_model.Prereg.code == code).first()
+        if db_item:
+                return True
+        
+        return False
+
 def get_available_slots(db_session: Session, date: datetime):
         opening_time = datetime(date.year, date.month, date.day, 8, 0)
         closing_time = datetime(date.year, date.month, date.day, 19, 0) 
