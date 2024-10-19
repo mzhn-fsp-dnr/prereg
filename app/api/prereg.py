@@ -6,7 +6,7 @@ import app.services.prereg as prereg_service
 from uuid import UUID
 from datetime import datetime
 
-router = APIRouter()
+router = APIRouter(prefix="/prereg")
 
 @router.get("/slots/{date}")
 def get_available(date: datetime, db_session: Session = Depends(get_db)):
