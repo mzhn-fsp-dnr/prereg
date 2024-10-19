@@ -10,6 +10,7 @@ class Prereg(Base):
     code = Column(Integer, nullable=False)
     department_id = Column(UUID(as_uuid=True), nullable=False)
     service_id = Column(UUID(as_uuid=True), nullable=False)
+    assigned_to = Column(DateTime, nullable=False)
     
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow) 
