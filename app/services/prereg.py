@@ -4,6 +4,9 @@ from app.models import prereg_model
 from app.helpers import generate_random_seven_digit_number
 from datetime import datetime, timedelta
 
+def get_prereg_by_office_id_and_code(db_session: Session, office_id: str, code: int):
+        return db_session.query(prereg_model.Prereg).filter(prereg_model.Prereg.department_id == office_id, prereg_model.Prereg.code == code).first()
+
 def get_prereg(db_session: Session, id: str):
         return db_session.query(prereg_model.Prereg).filter(prereg_model.Prereg.id == id).first()
 

@@ -16,6 +16,10 @@ def validate_code(code: int, db_session: Session = Depends(get_db)):
 def get_available(date: datetime, db_session: Session = Depends(get_db)):
     return prereg_service.get_available_slots(db_session, date)
 
+@router.get("/office/{office_id}/{code}")
+def get_prereg_by_office_id_and_code(office_id: str, code: int, db_session: Session = Depends(get_db)):
+    return get_prereg_by_office_id_and_code(db_session, office_id, code)
+
 @router.post("/")
 def create_prereg(prereg: prereg_schema.CreatePrereg, db_session: Session = Depends(get_db)):
     """
