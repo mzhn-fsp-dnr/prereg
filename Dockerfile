@@ -8,4 +8,4 @@ COPY . .
 
 ARG APP_PORT
 
-CMD uvicorn app.main:app --host 0.0.0.0 --port $APP_PORT
+CMD uvicorn app.main:app --root-path /prereg --host 0.0.0.0 --port $APP_PORT
