@@ -35,5 +35,7 @@ windows/
 │   └── services # Слой сервисов
 ├── docker-compose.yml
 ├── log_api.log # Лог
+├── .env.example # Пример конфигурации для .env
 └── requirements.txt
+
 ```
